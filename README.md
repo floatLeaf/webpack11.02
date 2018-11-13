@@ -10,12 +10,12 @@ html-loader 导出 HTML 为字符串，需要引用静态资源
 
 #### css预处理
  
-+style-loader 将模块的导出作为样式添加到 DOM 中
-+css-loader 解释(interpret) @import 和 url() ，会 import/require() 后再解析(resolve)它们。
-+less-loader 加载和转译 LESS 文件
-+sass-loader 加载和转译 SASS/SCSS 文件
-+postcss-loader 使用 PostCSS 加载和转译 CSS/SSS 文件
-+stylus-loader 加载和转译 Stylus 文件
++ style-loader 将模块的导出作为样式添加到 DOM 中
++ css-loader 解释(interpret) @import 和 url() ，会 import/require() 后再解析(resolve)它们。
++ less-loader 加载和转译 LESS 文件
++ sass-loader 加载和转译 SASS/SCSS 文件
++ postcss-loader 使用 PostCSS 加载和转译 CSS/SSS 文件
++ stylus-loader 加载和转译 Stylus 文件
 
 
 
