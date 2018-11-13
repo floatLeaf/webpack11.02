@@ -4,6 +4,7 @@ let merge = require('webpack-merge');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let ImageminPlugin = require('imagemin-webpack-plugin').default;
+let OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 let base = require('./base');
 let config = require('./config/config');
 let util = require('./config/util');
@@ -59,12 +60,18 @@ function getDistConfig(name) {
 
 			new webpack.NoEmitOnErrorsPlugin(),
 
-
 			new ImageminPlugin({ 
 			    pngquant: {
 			        quality: '95-100'
 			    }
 			}),
+
+			// 缩提取出的css，并解决ExtractTextPlugin分离出的js重复问题(多个文件引入同一css文件)
+		    new OptimizeCSSPlugin({
+		      	cssProcessorOptions: {
+		        	safe: true
+		      	}
+		    }),
 
 			getHtml(name),
 		]

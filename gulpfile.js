@@ -22,14 +22,14 @@ function getTestConfigMultiple() {
 
 }
  
-gulp.task('default', function() {
-	let app = require('./build/dev-server');
-	let entry = dev.entry;
+// gulp.task('default', function() {
+// 	let app = require('./build/dev-server');
+// 	let entry = dev.entry;
 
-	app.listen(config.development.port, function(req, res) {
-		console.log('Starting server on http://localhost:' + config.development.port);
-	});
-});
+// 	app.listen(config.development.port, function(req, res) {
+// 		console.log('Starting server on http://localhost:' + config.development.port);
+// 	});
+// });
 
 gulp.task('dll', function() {
 	let complier = webpack(dllconf);

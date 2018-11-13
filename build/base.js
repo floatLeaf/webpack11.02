@@ -39,7 +39,7 @@ module.exports = {
 
 			{
 	        	test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
-	        	loader: 'url-loader?context=client&name=[path][name].[hash:7].[ext]' 
+        		loader: 'url-loader?limit=8192&context=client&name=img/[name].[hash:7].[ext]' 
 			},
 
 			...styleLoaders

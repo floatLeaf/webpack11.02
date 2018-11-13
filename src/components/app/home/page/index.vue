@@ -84,5 +84,5 @@
 </script>
 
 <style type="text/css" lang="scss"> 
- @import './index.scss';
+ /*@import './index.scss';*/
 </style>
