@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{14:function(t,e,n){"use strict";n.r(e);var s=function(){var t=this.$createElement;return(this._self._c||t)("p",[this._v("个人中心： "+this._s(this.text))])};s._withStripped=!0;var i={data:()=>({text:"hello word"})},r=n(0),o=Object(r.a)(i,s,[],!1,null,null,null);o.options.__file="src/components/admin/user/center/index.vue";e.default=o.exports}}]);
-//# sourceMappingURL=4.ca371.js.map
