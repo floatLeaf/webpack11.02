@@ -1,0 +1,31 @@
+<template>
+	<div class="container">
+		<router-view></router-view>
+	</div>
+</template>
+
+<script type="text/javascript">
+	import { getCookie } from 'lib/common/util';
+
+	export default {
+		created() {
+			let notNeedLogin = this.$route.meta.notNeedLogin;
+			let token = getCookie('token');
+
+			if (!notNeedLogin) { 
+				if (!token) {
+					window.location.href = '/login';
+				} else {
+					this.checkLogin();
+				}
+			}
+			
+		},
+
+		methods: {
+			checkLogin() {
+
+			}
+		}
+	}
+</script>

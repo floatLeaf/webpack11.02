@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{12:function(e,n,t){"use strict";t.r(n);var i=function(){var e=this.$createElement;return(this._self._c||e)("p",[this._v("这是用户编辑中心")])};i._withStripped=!0;var s={},r=t(0),o=Object(r.a)(s,i,[],!1,null,null,null);o.options.__file="src/components/admin/user/edit/index.vue";n.default=o.exports}}]);
+//# sourceMappingURL=5.df54f.js.map
