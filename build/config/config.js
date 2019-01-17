@@ -2,7 +2,7 @@ let path = require('path');
 
 module.exports = {
 	rem: {
-		disabled: true,
+		disabled: false,
 		rootValue: 25,
 	},
 

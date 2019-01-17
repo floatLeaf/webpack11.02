@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./build/dev-server.js"
+    "dev": "node ./build/dev-server.js",
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,13 @@
     "@babel/core": "^7.1.5",
     "@babel/plugin-proposal-export-default-from": "^7.0.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
     "@babel/preset-env": "^7.1.5",
     "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.4",
     "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gulp": "^3.9.1",

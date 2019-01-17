@@ -1,7 +1,7 @@
 "use static";
 let config = require('./config');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-// let MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let MiniCssExtractPlugin = require("mini-css-extract-plugin");
 let autoprefixer = require('autoprefixer');
 let postcssPxtorem = require('postcss-pxtorem');
 
@@ -52,22 +52,22 @@ function generLoader(loader, options) {
 			]  
 		}
 	});
- 
-	// return {
-	// 	test: new RegExp('\\.' + loader + '$'),
-	// 	use: [ 
-	// 		process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'vue-style-loader', 
-	// 		...loaders
-	// 	]
-	// }
 
 	return {
 		test: new RegExp('\\.' + loader + '$'),
-		use: ExtractTextPlugin.extract({
-			use: loaders,
-			fallback: 'vue-style-loader'
-		})
+		use: [ 
+			process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'vue-style-loader', 
+			...loaders
+		]
 	}
+
+	// return {
+	// 	test: new RegExp('\\.' + loader + '$'),
+	// 	use: ExtractTextPlugin.extract({
+	// 		use: loaders,
+	// 		fallback: 'vue-style-loader'
+	// 	})
+	// }
 }
 
 module.exports = ['css', 'sass', 'scss', 'less', 'stylus', 'lessm'].map(loader => { 

@@ -1,13 +1,16 @@
 {
-	preset: [
-		'@babel/preset-env', {
-			targets: {
-				"chrome": "58",
-				"ie": "11"
+	presets: [
+		[
+			'@babel/preset-env', {
+				targets: {
+					"chrome": "58",
+					"ie": "11"
+				}
 			}
-		}
+		]
 	],
 	plugins: [
+		'@babel/plugin-syntax-dynamic-import',
 		'@babel/plugin-transform-async-to-generator',
 		'@babel/plugin-proposal-export-default-from',
 		'@babel/plugin-proposal-export-namespace-from'

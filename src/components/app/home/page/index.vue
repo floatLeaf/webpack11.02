@@ -10,7 +10,7 @@
 			<div class="btn">查询</div>
 		</div>
 
-		<!-- <x-keyboard></x-keyboard> -->
+ 
 		<div class="keyboard" ref="keyboard">
 			<div class="opt">
 				<span>关闭</span>
@@ -27,13 +27,8 @@
 	</section>
 </template>
 
-<script>
-	// import Keyboard from 'components/admin/common/keyboard.vue';
-
-	export default{
-		// components: {
-		// 	'x-keyboard': Keyboard
-		// },
+<script> 
+	export default{ 
 
 		data() {
 			return { 

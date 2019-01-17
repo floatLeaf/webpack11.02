@@ -1,7 +1,7 @@
 let fs = require('fs');
 let path = require('path');
-let ExtractTextPlugin = require('extract-text-webpack-plugin')
-// let MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// let ExtractTextPlugin = require('extract-text-webpack-plugin')
+let MiniCssExtractPlugin = require("mini-css-extract-plugin");
 let config = require('./config/config');
 let VueLoaderPlugin = require('vue-loader/lib/plugin');
 let styleLoaders = require('./config/styleLoaders');
@@ -33,8 +33,9 @@ module.exports = {
 			}, 
 			
 			{
-				test: '/\.jsx?$/',
-				loader: 'babel-loader'
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
 			}, 
 
 			{
@@ -48,8 +49,11 @@ module.exports = {
 
 	plugins: [
 		new VueLoaderPlugin(),
-		new ExtractTextPlugin({filename: 'css/[name].[hash:6].css'}),
-		// new MiniCssExtractPlugin({ filename: "css/[name].[hash:6].css" }),  // 无法单独提取出css
+		// new ExtractTextPlugin({filename: 'css/[name].[hash:6].css'}),
+		new MiniCssExtractPlugin({ 
+			filename: "css/[name].[hash:6].css",
+			chunkFilename: "css/[id].css"
+		}),  // 无法单独提取出css
 	],
 
 	resolve: {  

@@ -19,7 +19,7 @@ html-loader 导出 HTML 为字符串，需要引用静态资源
 
 
 
-#### extract-text-webpack-plugin, 与webpack4.x不兼容，安装beta版本可用（@next）
+#### extract-text-webpack-plugin, 与webpack4.x不兼容，安装beta版本可用（@next, ）
 ```
 ExtractTextPlugin.extract({
   fallback: "style-loader",
@@ -33,7 +33,7 @@ publicfile:用来覆盖项目路径,生成该css文件的文件路径
 
 `css-loader options: {import: true, modules: true, localIdentName: true, cameCase: true}`
 
-> 可以使用mini-css-extract-plugin代替，但是使用发现无法提取出css，生成的css代码存在于js中
+>extract-text-webpack-plugin@4.0.0-beta.0在开发换环境中似乎会由于组建内部`<style></style>`导致报错(路由跳转到含有style的组件时控制台会报错，路由会重定向跳转。但是在修改了组件任意一处触发热加载之后所有页面又能正常加载，包括含有`style`的组件)， 可以使用mini-css-extract-plugin代替，但是使用发现无法提取出css，生成的css代码存在于js中
 
 #### 文件处理
 
@@ -84,3 +84,6 @@ optimization: {
 	runtimeChunk: true
 }
 ```
+
+
+####vue 按需加载 `const Edit = () => import('components/admin/user/edit');` 语法需要 `@babel/plugin-syntax-dynamic-import`插件支持

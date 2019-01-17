@@ -54,7 +54,9 @@ function getDistConfig(name) {
 
 		plugins: [
 			new webpack.DefinePlugin({
-				'NODE_ENV': JSON.stringify('production'),
+				'process.env': {
+			        NODE_ENV: '"production"'
+			    },
 				'COOKIE_SUFFIX': JSON.stringify('-pro'),
 			}),
 

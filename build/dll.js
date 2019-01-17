@@ -2,6 +2,8 @@ let path = require('path');
 let webpack = require('webpack');
 let base = require('./base'); 
 module.exports = { 
+	mode: 'development',
+	
 	entry: {
 		lib: [path.resolve(__dirname, './dll/config')],
 	},
